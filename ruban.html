@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shaa - Fashion Online Store</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #e91e63;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: #fce4ec;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #e91e63;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #c2185b;
+      box-shadow: 0 0 10px rgba(233, 30, 99, 0.6);
+      transform: translateY(-2px);
+    }
+    .products {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .product {
+      border: 1px solid #eee;
+      padding: 15px;
+      width: 200px;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.4s ease;
+    }
+    .product:hover img {
+      transform: scale(1.05);
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+    .product p {
+      margin: 0 0 10px;
+      color: #e91e63;
+    }
+    .product button {
+      padding: 8px 16px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .product button:hover {
+      background-color: #c2185b;
+      box-shadow: 0 0 10px rgba(233, 30, 99, 0.6);
+      transform: translateY(-2px);
+    }
+    #cart {
+      padding: 20px;
+      background: #f8bbd0;
+      margin: 40px 20px;
+      border-radius: 8px;
+    }
+    #cart h3 {
+      margin-bottom: 10px;
+      color: #e91e63;
+    }
+    #cart ul {
+      list-style: none;
+      padding: 0;
+    }
+    .clear-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .clear-btn:hover {
+      background-color: #c2185b;
+      box-shadow: 0 0 10px rgba(233, 30, 99, 0.6);
+      transform: translateY(-2px);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #fce4ec;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Shaa</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Kids</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Latest Fashion Trends</h1>
+    <p>Shop your style. Live your look.</p>
+    <a href="#" class="btn">Start Shopping</a>
+  </section>
+
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product" data-name="bodycon" data-price="2499">
+        <img src="./ff.jpg" alt="bodycon">
+        <h3>Silk Saree</h3>
+        <p>₹2,499</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="crop top" data-price="3499">
+        <img src="./rr.jpg" alt="crop top">
+        <h3>Crop Top</h3>
+        <p>₹3,499</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="saree" data-price="1499">
+        <img src="./sha.jpg" alt="saree">
+        <h3>Kids Dress</h3>
+        <p>₹1,499</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product" data-name="jean" data-price="1499">
+        <img src="./ss.jpg" alt="jean">
+        <h3>Kids Dress</h3>
+        <p>₹1,499</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="cart">
+    <h3>Your Cart</h3>
+    <ul id="cart-items"></ul>
+    <div class="total">Total: ₹0</div>
+    <button class="clear-btn">Clear Cart</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 StyleKart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const cartItemsEl = document.getElementById('cart-items');
+    const totalEl = document.querySelector('#cart .total');
+    const clearBtn = document.querySelector('#cart .clear-btn');
+    let cart = [];
+
+    function renderCart() {
+      cartItemsEl.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} x ${item.qty} - ₹${item.price * item.qty}`;
+        cartItemsEl.appendChild(li);
+        total += item.price * item.qty;
+      });
+      totalEl.textContent = `Total: ₹${total.toLocaleString('en-IN')}`;
+    }
+
+    function addToCart(name, price) {
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      renderCart();
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', e => {
+        const product = e.target.closest('.product');
+        const name = product.dataset.name;
+        const price = parseInt(product.dataset.price);
+        addToCart(name, price);
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      cart = [];
+      renderCart();
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>
